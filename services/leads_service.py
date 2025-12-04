@@ -5,11 +5,13 @@ from config.firebase import get_db
 from google.cloud.firestore_v1.base_query import FieldFilter
 from services.firebase_init import db
 
+
 db = get_db()
 
 LEADS_COLLECTION = "leads"
 
-STATUS_PIPELINE = ["novo", "atendimento", "negociacao", "faturado"]
+STATUS_PIPELINE = ["novo", "atendimento", "negociacao", "faturado", "perdido"]
+
 
 
 def create_lead(
@@ -117,3 +119,17 @@ def get_leads_stats(vendedor_email: Optional[str] = None) -> Dict:
             pass
 
     return stats
+
+def _leads_ref():
+    return db.collection(LEADS_COLLECTION)
+
+
+def update_lead_fields(lead_id: str, campos: dict):
+    """
+    Atualiza campos genéricos de um lead (ex: valor_previsto, observacoes).
+    """
+    try:
+        _leads_ref().document(lead_id).update(campos)
+        return True, "Lead atualizado com sucesso."
+    except Exception as e:
+        return False, f"Erro ao atualizar lead: {e}"
