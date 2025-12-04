@@ -256,7 +256,7 @@ def render_shell():
         if st.button("Sair"):
             st.session_state.user = None
             st.session_state.page = "Home"
-            st.experimental_rerun()
+            st.rerun()
 
     # HEADER
     st.markdown(
