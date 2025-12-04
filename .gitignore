@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.streamlit/
+streamlit/
+firebase_key.json
+firebase_key copy.json
+teste.json
