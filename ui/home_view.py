@@ -155,7 +155,7 @@ def _render_vendedor_home(user: dict):
     with col1:
         st.caption("Distribuição dos leads por etapa do funil (apenas seus leads).")
         df_status = _build_status_dataframe(por_status)
-        st.bar_chart(df_status, x="Status", y="Leads", use_container_width=True)
+        st.bar_chart(df_status, x="Status", y="Leads", width="stretch")
 
     with col2:
         st.metric("Taxa de conversão", f"{conversao:.1f}%")
@@ -256,7 +256,7 @@ def _render_admin_home(user: dict):
     with col1:
         st.caption("Quantidade de leads por etapa do funil (toda a empresa).")
         df_status = _build_status_dataframe(por_status)
-        st.bar_chart(df_status, x="Status", y="Leads", use_container_width=True)
+        st.bar_chart(df_status, x="Status", y="Leads", width="stretch")
 
     with col2:
         st.caption("Valor previsto total por etapa do funil.")
@@ -265,7 +265,7 @@ def _render_admin_home(user: dict):
             df_valor_status,
             x="Status",
             y="Valor_previsto",
-            use_container_width=True,
+            width="stretch",
         )
         st.metric("Taxa de conversão global", f"{conversao:.1f}%")
         st.metric("Leads perdidos", perdidos)
@@ -318,7 +318,7 @@ def _render_admin_home(user: dict):
         df_rank = df_rank.sort_values(by="Valor faturado", ascending=False)
         st.dataframe(
             df_rank,
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
 

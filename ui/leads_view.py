@@ -95,7 +95,7 @@ def render_leads_page(user: dict):
     role = user.get("role", "user")
     email_usuario = user.get("email")
 
-    st.markdown('<div class="crm-card">', unsafe_allow_html=True)
+    #st.markdown('<div class="crm-card">', unsafe_allow_html=True)
 
     # Cabeçalho
     if role == "admin":

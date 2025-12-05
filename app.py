@@ -72,15 +72,7 @@ section[data-testid="stSidebar"] {
     font-size: 0.8rem;
 }
 
-/* ===== CARDS GENÉRICOS ===== */
-.crm-card {
-    background: #FFFFFF;
-    border-radius: 24px;
-    padding: 1.4rem 1.5rem;
-    box-shadow: 0 20px 55px rgba(15,23,42,0.12);
-    border: 1px solid rgba(226,232,240,0.9);
-    margin-bottom: 1.5rem;
-}
+
 
 /* ===== TÍTULOS DE SEÇÃO ===== */
 .section-title {
@@ -279,6 +271,8 @@ def render_shell():
 
     # CONTEÚDO
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
+
+    user = st.session_state.user
 
     if st.session_state.page == "Home":
         render_home_page(user)
