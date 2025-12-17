@@ -74,13 +74,6 @@ def _inject_global_styles():
         }
 
         /* Card de login */
-        .login-card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 1.8rem 1.9rem 1.7rem 1.9rem;
-            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
-            border: 1px solid rgba(148, 163, 184, 0.25);
-        }
 
         .login-title {
             font-size: 1.05rem;
